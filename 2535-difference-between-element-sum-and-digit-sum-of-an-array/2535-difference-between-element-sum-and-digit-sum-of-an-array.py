@@ -2,14 +2,12 @@ class Solution:
     def differenceOfSum(self, nums: List[int]) -> int:
         eleSum =0
         digitSum =0
-        for i in range(len(nums)):
-            eleSum+=nums[i]
-            if nums[i] >9:
-                n = nums[i]
-                n_num=[int(num) for num in str(n)]
-                for j in n_num:
-                    digitSum += j
+        eleSum = sum(nums)
+        for i in nums:
+            if i >9:
+                digitSum+=sum([int(num) for num in str(i)])
             else:
-                digitSum+=nums[i]
+                digitSum+=i
+                print(digitSum, eleSum)
         return abs(eleSum-digitSum)
                 
