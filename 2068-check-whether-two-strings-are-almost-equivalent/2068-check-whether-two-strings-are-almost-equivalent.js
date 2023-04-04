@@ -7,7 +7,7 @@ var checkAlmostEquivalent = function(word1, word2) {
     const hash = {};
     let output = true;
 
-    [...word1].map( char => {
+   [...word1].map( char => {
             hash[char] = hash[char] + 1 || 1;
         }
     );
@@ -19,10 +19,10 @@ var checkAlmostEquivalent = function(word1, word2) {
             hash[char] = - 1;
         }
     });
-    
-    for(let char in hash) {
-        Math.abs(hash[char]) > 3 ? output = false : output; 
+    console.log(hash)
+    for(let char in hash){
+        Math.abs(hash[char]) > 3 ? output=false: output
     }
-
-    return output;
+    return output
 };
+
